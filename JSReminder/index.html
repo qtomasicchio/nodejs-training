@@ -1,0 +1,293 @@
+<!doctype html>
+<html data-n-head-ssr data-n-head="">
+  <head data-n-head="">
+    <title data-n-head="true">Formation Node.js</title><meta data-n-head="true" charset="utf-8"><meta data-n-head="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-n-head="true" data-hid="description" name="description" content="Formation Node.js"><link data-n-head="true" rel="icon" type="image/png" href="favicon.png"><link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"><link data-n-head="true" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css"><style data-n-head="true" id="vuetify-theme-stylesheet" type="text/css">a{color:#1976d2}.primary{background-color:#1976d2!important;border-color:#1976d2!important}.primary--text{color:#1976d2!important;caret-color:#1976d2!important}.primary.lighten-5{background-color:#c7fdff!important;border-color:#c7fdff!important}.primary--text.text--lighten-5{color:#c7fdff!important;caret-color:#c7fdff!important}.primary.lighten-4{background-color:#a8e0ff!important;border-color:#a8e0ff!important}.primary--text.text--lighten-4{color:#a8e0ff!important;caret-color:#a8e0ff!important}.primary.lighten-3{background-color:#8ac5ff!important;border-color:#8ac5ff!important}.primary--text.text--lighten-3{color:#8ac5ff!important;caret-color:#8ac5ff!important}.primary.lighten-2{background-color:#6aaaff!important;border-color:#6aaaff!important}.primary--text.text--lighten-2{color:#6aaaff!important;caret-color:#6aaaff!important}.primary.lighten-1{background-color:#488fef!important;border-color:#488fef!important}.primary--text.text--lighten-1{color:#488fef!important;caret-color:#488fef!important}.primary.darken-1{background-color:#005eb6!important;border-color:#005eb6!important}.primary--text.text--darken-1{color:#005eb6!important;caret-color:#005eb6!important}.primary.darken-2{background-color:#00479b!important;border-color:#00479b!important}.primary--text.text--darken-2{color:#00479b!important;caret-color:#00479b!important}.primary.darken-3{background-color:#003180!important;border-color:#003180!important}.primary--text.text--darken-3{color:#003180!important;caret-color:#003180!important}.primary.darken-4{background-color:#001e67!important;border-color:#001e67!important}.primary--text.text--darken-4{color:#001e67!important;caret-color:#001e67!important}.secondary{background-color:#424242!important;border-color:#424242!important}.secondary--text{color:#424242!important;caret-color:#424242!important}.secondary.lighten-5{background-color:#c1c1c1!important;border-color:#c1c1c1!important}.secondary--text.text--lighten-5{color:#c1c1c1!important;caret-color:#c1c1c1!important}.secondary.lighten-4{background-color:#a6a6a6!important;border-color:#a6a6a6!important}.secondary--text.text--lighten-4{color:#a6a6a6!important;caret-color:#a6a6a6!important}.secondary.lighten-3{background-color:#8b8b8b!important;border-color:#8b8b8b!important}.secondary--text.text--lighten-3{color:#8b8b8b!important;caret-color:#8b8b8b!important}.secondary.lighten-2{background-color:#727272!important;border-color:#727272!important}.secondary--text.text--lighten-2{color:#727272!important;caret-color:#727272!important}.secondary.lighten-1{background-color:#595959!important;border-color:#595959!important}.secondary--text.text--lighten-1{color:#595959!important;caret-color:#595959!important}.secondary.darken-1{background-color:#2c2c2c!important;border-color:#2c2c2c!important}.secondary--text.text--darken-1{color:#2c2c2c!important;caret-color:#2c2c2c!important}.secondary.darken-2{background-color:#171717!important;border-color:#171717!important}.secondary--text.text--darken-2{color:#171717!important;caret-color:#171717!important}.secondary.darken-3{background-color:#000!important;border-color:#000!important}.secondary--text.text--darken-3{color:#000!important;caret-color:#000!important}.secondary.darken-4{background-color:#000!important;border-color:#000!important}.secondary--text.text--darken-4{color:#000!important;caret-color:#000!important}.accent{background-color:#82b1ff!important;border-color:#82b1ff!important}.accent--text{color:#82b1ff!important;caret-color:#82b1ff!important}.accent.lighten-5{background-color:#fff!important;border-color:#fff!important}.accent--text.text--lighten-5{color:#fff!important;caret-color:#fff!important}.accent.lighten-4{background-color:#f8ffff!important;border-color:#f8ffff!important}.accent--text.text--lighten-4{color:#f8ffff!important;caret-color:#f8ffff!important}.accent.lighten-3{background-color:#daffff!important;border-color:#daffff!important}.accent--text.text--lighten-3{color:#daffff!important;caret-color:#daffff!important}.accent.lighten-2{background-color:#bce8ff!important;border-color:#bce8ff!important}.accent--text.text--lighten-2{color:#bce8ff!important;caret-color:#bce8ff!important}.accent.lighten-1{background-color:#9fccff!important;border-color:#9fccff!important}.accent--text.text--lighten-1{color:#9fccff!important;caret-color:#9fccff!important}.accent.darken-1{background-color:#6596e2!important;border-color:#6596e2!important}.accent--text.text--darken-1{color:#6596e2!important;caret-color:#6596e2!important}.accent.darken-2{background-color:#467dc6!important;border-color:#467dc6!important}.accent--text.text--darken-2{color:#467dc6!important;caret-color:#467dc6!important}.accent.darken-3{background-color:#2364aa!important;border-color:#2364aa!important}.accent--text.text--darken-3{color:#2364aa!important;caret-color:#2364aa!important}.accent.darken-4{background-color:#004c90!important;border-color:#004c90!important}.accent--text.text--darken-4{color:#004c90!important;caret-color:#004c90!important}.error{background-color:#ff5252!important;border-color:#ff5252!important}.error--text{color:#ff5252!important;caret-color:#ff5252!important}.error.lighten-5{background-color:#ffe4d5!important;border-color:#ffe4d5!important}.error--text.text--lighten-5{color:#ffe4d5!important;caret-color:#ffe4d5!important}.error.lighten-4{background-color:#ffc6b9!important;border-color:#ffc6b9!important}.error--text.text--lighten-4{color:#ffc6b9!important;caret-color:#ffc6b9!important}.error.lighten-3{background-color:#ffa99e!important;border-color:#ffa99e!important}.error--text.text--lighten-3{color:#ffa99e!important;caret-color:#ffa99e!important}.error.lighten-2{background-color:#ff8c84!important;border-color:#ff8c84!important}.error--text.text--lighten-2{color:#ff8c84!important;caret-color:#ff8c84!important}.error.lighten-1{background-color:#ff6f6a!important;border-color:#ff6f6a!important}.error--text.text--lighten-1{color:#ff6f6a!important;caret-color:#ff6f6a!important}.error.darken-1{background-color:#df323b!important;border-color:#df323b!important}.error--text.text--darken-1{color:#df323b!important;caret-color:#df323b!important}.error.darken-2{background-color:#bf0025!important;border-color:#bf0025!important}.error--text.text--darken-2{color:#bf0025!important;caret-color:#bf0025!important}.error.darken-3{background-color:#9f0010!important;border-color:#9f0010!important}.error--text.text--darken-3{color:#9f0010!important;caret-color:#9f0010!important}.error.darken-4{background-color:maroon!important;border-color:maroon!important}.error--text.text--darken-4{color:maroon!important;caret-color:maroon!important}.info{background-color:#2196f3!important;border-color:#2196f3!important}.info--text{color:#2196f3!important;caret-color:#2196f3!important}.info.lighten-5{background-color:#d4ffff!important;border-color:#d4ffff!important}.info--text.text--lighten-5{color:#d4ffff!important;caret-color:#d4ffff!important}.info.lighten-4{background-color:#b5ffff!important;border-color:#b5ffff!important}.info--text.text--lighten-4{color:#b5ffff!important;caret-color:#b5ffff!important}.info.lighten-3{background-color:#95e8ff!important;border-color:#95e8ff!important}.info--text.text--lighten-3{color:#95e8ff!important;caret-color:#95e8ff!important}.info.lighten-2{background-color:#75ccff!important;border-color:#75ccff!important}.info--text.text--lighten-2{color:#75ccff!important;caret-color:#75ccff!important}.info.lighten-1{background-color:#51b0ff!important;border-color:#51b0ff!important}.info--text.text--lighten-1{color:#51b0ff!important;caret-color:#51b0ff!important}.info.darken-1{background-color:#007cd6!important;border-color:#007cd6!important}.info--text.text--darken-1{color:#007cd6!important;caret-color:#007cd6!important}.info.darken-2{background-color:#0064ba!important;border-color:#0064ba!important}.info--text.text--darken-2{color:#0064ba!important;caret-color:#0064ba!important}.info.darken-3{background-color:#004d9f!important;border-color:#004d9f!important}.info--text.text--darken-3{color:#004d9f!important;caret-color:#004d9f!important}.info.darken-4{background-color:#003784!important;border-color:#003784!important}.info--text.text--darken-4{color:#003784!important;caret-color:#003784!important}.success{background-color:#4caf50!important;border-color:#4caf50!important}.success--text{color:#4caf50!important;caret-color:#4caf50!important}.success.lighten-5{background-color:#dcffd6!important;border-color:#dcffd6!important}.success--text.text--lighten-5{color:#dcffd6!important;caret-color:#dcffd6!important}.success.lighten-4{background-color:#beffba!important;border-color:#beffba!important}.success--text.text--lighten-4{color:#beffba!important;caret-color:#beffba!important}.success.lighten-3{background-color:#a2ff9e!important;border-color:#a2ff9e!important}.success--text.text--lighten-3{color:#a2ff9e!important;caret-color:#a2ff9e!important}.success.lighten-2{background-color:#85e783!important;border-color:#85e783!important}.success--text.text--lighten-2{color:#85e783!important;caret-color:#85e783!important}.success.lighten-1{background-color:#69cb69!important;border-color:#69cb69!important}.success--text.text--lighten-1{color:#69cb69!important;caret-color:#69cb69!important}.success.darken-1{background-color:#2d9437!important;border-color:#2d9437!important}.success--text.text--darken-1{color:#2d9437!important;caret-color:#2d9437!important}.success.darken-2{background-color:#00791e!important;border-color:#00791e!important}.success--text.text--darken-2{color:#00791e!important;caret-color:#00791e!important}.success.darken-3{background-color:#006000!important;border-color:#006000!important}.success--text.text--darken-3{color:#006000!important;caret-color:#006000!important}.success.darken-4{background-color:#004700!important;border-color:#004700!important}.success--text.text--darken-4{color:#004700!important;caret-color:#004700!important}.warning{background-color:#fb8c00!important;border-color:#fb8c00!important}.warning--text{color:#fb8c00!important;caret-color:#fb8c00!important}.warning.lighten-5{background-color:#ffff9e!important;border-color:#ffff9e!important}.warning--text.text--lighten-5{color:#ffff9e!important;caret-color:#ffff9e!important}.warning.lighten-4{background-color:#fffb82!important;border-color:#fffb82!important}.warning--text.text--lighten-4{color:#fffb82!important;caret-color:#fffb82!important}.warning.lighten-3{background-color:#ffdf67!important;border-color:#ffdf67!important}.warning--text.text--lighten-3{color:#ffdf67!important;caret-color:#ffdf67!important}.warning.lighten-2{background-color:#ffc24b!important;border-color:#ffc24b!important}.warning--text.text--lighten-2{color:#ffc24b!important;caret-color:#ffc24b!important}.warning.lighten-1{background-color:#ffa72d!important;border-color:#ffa72d!important}.warning--text.text--lighten-1{color:#ffa72d!important;caret-color:#ffa72d!important}.warning.darken-1{background-color:#db7200!important;border-color:#db7200!important}.warning--text.text--darken-1{color:#db7200!important;caret-color:#db7200!important}.warning.darken-2{background-color:#bb5900!important;border-color:#bb5900!important}.warning--text.text--darken-2{color:#bb5900!important;caret-color:#bb5900!important}.warning.darken-3{background-color:#9d4000!important;border-color:#9d4000!important}.warning--text.text--darken-3{color:#9d4000!important;caret-color:#9d4000!important}.warning.darken-4{background-color:#802700!important;border-color:#802700!important}.warning--text.text--darken-4{color:#802700!important;caret-color:#802700!important}</style><script data-n-head="true" src="https://embed.runkit.com/"></script><base href="/nodejs-training/"><link rel="preload" href="/nodejs-training/_nuxt/b03d9ead0658fb8c5971.js" as="script"><link rel="preload" href="/nodejs-training/_nuxt/98f90f04c315895c381e.js" as="script"><link rel="preload" href="/nodejs-training/_nuxt/1150d64c8f3d23d28409.css" as="style"><link rel="preload" href="/nodejs-training/_nuxt/d34fb72ee6f11ab1ca77.js" as="script"><link rel="preload" href="/nodejs-training/_nuxt/897932cff42d1a41ff9f.css" as="style"><link rel="preload" href="/nodejs-training/_nuxt/ff9cee4eff930804f07c.js" as="script"><link rel="preload" href="/nodejs-training/_nuxt/6cd7215bddddfae3446a.css" as="style"><link rel="preload" href="/nodejs-training/_nuxt/bc8ce08faa1c02c436c1.js" as="script"><link rel="stylesheet" href="/nodejs-training/_nuxt/1150d64c8f3d23d28409.css"><link rel="stylesheet" href="/nodejs-training/_nuxt/897932cff42d1a41ff9f.css"><link rel="stylesheet" href="/nodejs-training/_nuxt/6cd7215bddddfae3446a.css">
+  </head>
+  <body data-n-head="">
+    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div data-app="true" id="app" class="application theme--light"><div class="application--wrap"><aside class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100%;margin-top:0;transform:translateX(-300px);width:300px"><div role="list" class="v-list theme--light"><div role="listitem"><a href="/nodejs-training/" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">home</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">Accueil</div></div></a></div><div role="listitem"><a href="/nodejs-training/prerequisite" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">bubble_chart</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">Prérequis</div></div></a></div><div role="listitem"><a href="/nodejs-training/presentation" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">slideshow</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">Présentation</div></div></a></div><div role="listitem"><a href="/nodejs-training/jsreminder" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">directions_walk</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">Rappel JavaScript</div></div></a></div><div role="listitem"><a href="/nodejs-training/modules" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">import_export</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">Modules</div></div></a></div><div role="listitem"><a href="/nodejs-training/npm" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">cloud_queue</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">NPM</div></div></a></div><div role="listitem"><a href="/nodejs-training/callback" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">call</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">Les callbacks (1)</div></div></a></div><div role="listitem"><a href="/nodejs-training/tests" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">bug_report</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">Les tests</div></div></a></div><div role="listitem"><a href="/nodejs-training/eventloop" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">loop</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">L'event loop</div></div></a></div><div role="listitem"><a href="/nodejs-training/callback-async" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">phone_callback</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">Les callbacks (2)</div></div></a></div><div role="listitem"><a href="/nodejs-training/promises" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">record_voice_over</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">Les promesses</div></div></a></div><div role="listitem"><a href="/nodejs-training/async" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">swap_horiz</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">async/await</div></div></a></div><div role="listitem"><a href="/nodejs-training/got" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">Client HTTP</div></div></a></div><div role="listitem"><a href="/nodejs-training/httpserver" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">cloud</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">Serveur HTTP</div></div></a></div><div role="listitem"><a href="/nodejs-training/eventemitter" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">cast</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">Les évènements</div></div></a></div><div role="listitem"><a href="/nodejs-training/streams" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">waves</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">Les streams</div></div></a></div><div role="listitem"><a href="/nodejs-training/logger" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">format_align_left</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">Les logs</div></div></a></div><div role="listitem"><a href="/nodejs-training/configuration" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">settings</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">La configuration</div></div></a></div><div role="listitem"><a href="/nodejs-training/production" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">directions_run</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">Node.js en production</div></div></a></div><div role="listitem"><a href="/nodejs-training/usefullibrary" router="" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">build</i></div> <div class="v-list__tile__content"><div class="v-list__tile__title">Librairies utiles</div></div></a></div></div><div class="v-navigation-drawer__border"></div></aside> <nav class="v-toolbar v-toolbar--dense v-toolbar--fixed theme--light" style="margin-top:0;padding-right:0;padding-left:0;transform:translateY(0)"><div class="v-toolbar__content" style="height:48px"><button type="button" class="v-toolbar__side-icon v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">menu</i></div></button> <button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><!----> <i aria-hidden="true" class="v-icon material-icons theme--light">chevron_left</i></div></button> <button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><!----> <i aria-hidden="true" class="v-icon material-icons theme--light">brightness_low</i></div></button> <div class="v-toolbar__title">Formation Node.js</div></div></nav> <main class="v-content" style="padding-top:48px;padding-right:0;padding-bottom:0;padding-left:0"><div class="v-content__wrap"><div class="container"><div class="layout column justify-center align-center"><div class="flex xs12 sm8 md6"><div class="flex xs12"><div class="v-card v-sheet theme--light"><div class="v-card__title headline primary--text">Rappel JavaScript</div> <div class="layout"><div class="flex xs2"><img src="/nodejs-training/_nuxt/img/d7cc0a0.png" alt="JavaScript" class="mb-5 pl-5"></div> <div class="flex xs7"><div class="v-card__text pt-3"><p>
+                  Une bonne connaissance du langage
+                  <b>JavaScript</b> est indispensable pour aborder sereinement l'apprentissage du Node.js.
+                  <br> <br>Cette partie contient les basiques du langage et les évolutions apportées par
+                  <b>ES6</b>.
+                </p></div></div></div></div></div> <div class="v-card v-sheet theme--light"><div class="v-card__title title primary--text">Types et variables</div> <div class="v-card__text"><p>JavaScript est un langage dont le typage est faible et dynamique. Cela signifie qu'il n'est pas nécessaire de déclarer le type d'une variable avant de l'utiliser. Le type de la variable sera automatiquement déterminé lorsque le programme sera exécuté. Cela signifie également que la même variable pourra avoir différents types au cours de son existence :</p> <pre>            <code class="javascript">
+  const length = 16;           // Number
+  const lastName = "Johnson";  // String
+  const x = {                  // Object
+    firstName:"John",
+    lastName:"Doe"
+  };
+            </code>
+          </pre>
+          Les types sont dynamiques en JavaScript. Ce qui signifie qu'une même variable peut contenir des types de données différents, par exemple :
+          <pre>            <code class="javascript">
+  let x;           // Ici x est undefined
+  x = 5;           // Ici x est un Number
+  x = "John";      // Ici x est un String
+            </code>
+          </pre> <p class="subheading primary--text">Les types de données</p> <p>Le dernier standard ECMAScript définit 7 types de données :</p> <ul><li>Les types de données primitifs : <i>Boolean</i>, <i>Null</i>, <i>Undefined</i>, <i>Number</i>, <i>String</i> et <i>Symbol</i> ;</li> <li>et le type <i>Object</i></li></ul> <pre>            <code class="javascript">
+  let isHolder = true;             // Type Boolean    - true / false
+  let name = "John";               // Type String     - il est également possible d'utiliser les guillements simple : 'John'
+  let size = 5;                    // Type Number     - les nombres flottants à précision double : de -(2<sup>53</sup> -1) et 2<sup>53</sup> -1
+                                   //                   avec également +Infinity, -Infinity, et NaN
+  let myPrivateMethod = Symbol();  // Type Symbol
+  let x = null;                    // Type Null
+  let x;                           // Type Undefined
+
+            </code>
+          </pre> <p>La langage propose également des <i>objets globaux standards</i> héritant d'<code>Object</code> avec des syntaxes litérales, comme par exemple :</p> <pre>            <code class="javascript">
+  // Les tableaux : Array
+  const fruits = ['apples', 'oranges', 'lemons'];
+  // Les expressions régulières : RegExp
+  const textFiles = /\.(rdf|txt)$/;
+  // Les dates : Date
+  const now = new Date();
+  // Les erreurs : Error
+  const err = new Error('did i do that?');
+  // Les fonctions : Function
+  const sayHi = function() { return 'Hi' };
+            </code>
+          </pre> <p>Ces classes sont typées comme des <code>Object</code>, elles héritent des méthodes comme : <code>toString</code>, <code>valueOf</code>, <code>hashCode</code>.</p> <div class="v-alert v-alert--outline info--text"><i aria-hidden="true" class="v-icon material-icons theme--light v-alert__icon">info</i><div>
+            La liste complète de ces "objets globaux" est disponible sur la documentation du langage, voir <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux">Mozilla Developer Network - Objets globaux</a></div></div> <br> <p class="subheading primary--text">Les variables</p> <p>Il existe trois mots clés en JavaScript pour déclarer une variable : <code>var</code>, <code>let</code> et <code>const</code>.</p> <ul><li><code>const</code> permet de déclarer une variable à assignation unique bindée lexicalement, ce qui veut dire qu'une variable déclarée avec const ne contiendra qu'une valeur qui sera scopée au niveau du bloc :
+              <pre>                <code class="javascript">
+  function fn() {
+    const foo = "bar"
+    if (true) {
+      const foo // SyntaxError, la variable a besoin d'être assignée
+      const foo = "qux"
+      foo = "norf" // SyntaxError, la variable ne peut pas être réassignée
+      console.log(foo)
+      // "qux", la variable appartient au scope de son bloc (le "if")
+    }
+    console.log(foo)
+    // "bar", la variable appartient au scope de la fonction "fn"
+  }
+                </code>
+              </pre> <div class="v-alert v-alert--outline warning--text"><i aria-hidden="true" class="v-icon material-icons theme--light v-alert__icon">warning</i><div><code>const</code> définit une constante au niveau de la référence uniquement, il est possible de modifier le contenu d'un tableau ou d'un objet :
+                <pre>                  <code class="javascript">
+  const students = [];
+  students.push('John'); // est valide !
+                  </code>
+                </pre></div></div></li> <li><code>let</code> est similaire au <code>const</code> sans la contrainte sur l'assignation. <code>let</code> est donc ré-assignable et scopé au bloc courant :
+              <pre>                <code class="javascript">
+  function fn() {
+    let foo = "bar";
+    if (true) {
+      let foo; // pas d'erreur, foo === undefined
+      foo = "qux";
+      console.log(foo);
+      // "qux", la variable appartient au scope de son blocs (le "if")
+    }
+    console.log(foo);
+    // "bar", la variable appartient au scope de son bloc (la fonction "fn")
+  }
+                </code>
+              </pre></li> <li><code>var</code> permet de déclarer une variable scopée au niveau de la fonction :
+              <pre>                <code class="javascript">
+  function fn() {
+    try {
+      console.log(x); // undefined dû au hoisting (au lieu de ReferenceError pour let ou const)
+      var x = foo(); // la déclaration de x est valable pour toute la fonction "fn"
+    } catch(err) {}
+    bar(x); // ici x est bien initialisé avec la valeur de retour de foo()
+  }
+                </code>
+              </pre> <div class="v-alert v-alert--outline warning--text"><i aria-hidden="true" class="v-icon material-icons theme--light v-alert__icon">warning</i><div>
+                Le scope au niveau de la fonction et le mécanisme de hoisting ne sont pas naturels, nous vous conseillons d'utiliser <code>const</code> et <code>let</code> dans 99.9% des cas !
+              </div></div></li></ul></div></div> <div class="v-card v-sheet theme--light"><div class="v-card__title title primary--text">Fonctions</div> <div class="v-card__text"><p>Les <b>fonctions</b> font partie des briques fondamentales de JavaScript. Une fonction est une procédure JavaScript, un ensemble d'instructions effectuant une tâche ou calculant une valeur.</p> <br> <p>En JavaScript une fonction est définie par le mot clé <code>function</code> suivi d'un <b>nom</b> et de paranthèse <b>()</b></p> <pre>            <code class="javascript">
+  function name(parameter1, parameter2, parameter3) {
+    // code to be executed
+  }
+            </code>
+          </pre> <p>Le nombre d'argument d'une fonction est dynamique, <code>arguments</code> est un pseudo-tableau contenant les paramètres effectifs au moment de l'appel.</p> <div class="v-alert v-alert--outline info--text"><i aria-hidden="true" class="v-icon material-icons theme--light v-alert__icon">info</i><div>
+            En ES6, il est préférable d'utiliser la syntaxe <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/param%C3%A8tres_du_reste">Mozilla Developer Network - Rest parameters</a> qui permet de représenter un nombre indéfini d'arguments sous forme de tableau : <code class="javascript">function sum(...theArgs) {}</code></div></div> <p>En JavaScript, par défaut, la valeur des paramètres d'une fonction sera undefined. Malgré tout, il peut être assez utile de pouvoir définir d'autres valeurs par défaut.</p> <pre>            <code class="javascript">
+  function multiply(a, b = 1) {
+    return a * b;
+  }
+
+  multiply(5, 2); // 10
+  multiply(5);    // 5 - ici b est undefined, il prend la valeur de 1
+            </code>
+          </pre> <br> <p>Il est également possible de définir une fonction grâce aux <b>expressions de fonction</b>, ces fonctions peuvent ainsi être anonymes :</p> <pre>            <code class="javascript">
+  let square = function (nb) { return nb * nb };
+  let x = square(4); // x reçoit la valeur 16
+            </code>
+          </pre> <p>Cette syntaxe permet de passer une fonction comme argument d'une autre fonction ou de définir une fonction de manière conditionnelle.</p> <p class="subheading primary--text">Les fonctions fléchées</p> <p>Une <b>expression de fonction fléchée</b> (<i>arrow function</i> en anglais) permet d’avoir une syntaxe plus courte que les expressions de fonction et ne possède pas ses propres valeurs pour <code>this</code>, <code>arguments</code>, <code>super</code>, ou <code>new.target</code>. Les fonctions fléchées sont souvent anonymes et ne sont pas destinées à être utilisées pour déclarer des méthodes.</p> <pre>            <code class="javascript">
+  const square = nb => nb * nb; // le return est implicite sur une seule ligne
+  console.log(square(2)); // => 4
+
+  const sum = (a, b) => { // les parathèses sont obligatoires si vous avez au moins deux arguments
+    return a + b;
+  }
+  console.log(sum(2, 3)); => 5
+            </code>
+          </pre> <div class="v-alert v-alert--outline info--text"><i aria-hidden="true" class="v-icon material-icons theme--light v-alert__icon">info</i><div>
+            Pour aller plus loin, voir <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Fonctions">Mozilla Developer Network - Fonctions</a></div></div></div></div> <div class="v-card v-sheet theme--light"><div class="v-card__title title primary--text">Structures itératives</div> <div class="v-card__text"><p>JavaScript propose plusieurs <b>structures itératives</b> sur les tableaux et les objets.</p> <br> <p class="subheading primary--text">Parcourir un tableau</p> <pre>            <code class="javascript">
+  // le for "classique" pour les tableaux
+  const count = [ 'one', 'two', 'three' ];
+  for (const i = 0; i &lt; count.length; i++) {
+    console.log(i, count[i]);
+  }
+
+  // le forEach en mode fonctionel
+  ['one', 'two', 'three'].forEach(elem => {
+    console.log(elem);
+  });
+            </code>
+          </pre> <p> Quelques méthodes supplémentaires utiles pour les tableaux : <code>map</code>, <code>filter</code> :</p> <pre>            <code class="javascript">
+  const numbers = [1, 2, 3, 4];
+
+  // map() crée un nouveau tableau avec les résultats de l'appel d'une fonction fournie sur chaque élément du tableau
+  const squareNumbers = numbers.map(elem => elem * elem);
+  console.log(squareMap); // [1, 4, 9, 16]
+
+  // filter() crée un nouveau tableau contenant tous les éléments du tableau d'origine qui remplissent une condition déterminée
+  const evenNumbers = numbers.filter(elem % 2 === 0);
+  console.log(evenNumbers); // [2, 4]
+            </code>
+          </pre> <p class="subheading primary--text">Parcourir un objet</p> <pre>            <code class="javascript">
+  // le for in pour les objets
+  const person = { name: 'Jane', age: 28 };
+  for (const attr in person) {
+    console.log(attr, person[attr]);
+  }
+
+  // en utilisant Object.entries()
+  console.log(Object.entries(person)); // [["name", "Jane"], ["age", 28]]
+  // en utilisant Object.keys()
+  Object.keys(person).forEach(key => {
+    console.log(key, person[key]);
+  });
+            </code>
+          </pre> <p>L'instruction <b>for...of</b> permet de créer une boucle Array qui parcourt un <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Les_protocoles_iteration#Le_protocole_.C2.AB_it.C3.A9rable_.C2.BB">objet itérable</a> (ce qui inclut les objets Array, Map, Set, String, TypedArray, l'objet arguments, etc.) et qui permet d'exécuter une ou plusieurs instructions pour la valeur de chaque propriété.</p> <pre>            <code class="javascript">
+  const m = new Map([["foo", "hello"], ["bar", "world"]]);
+  for (const [name, value] of m) {
+    console.log(name + "->" + value); //"foo->hello", "bar->world"
+  }
+
+  const obj = { foo: "hello", bar: "world" };
+  for (const key of Object.keys(obj)) {
+    console.log(key + "->" + obj[key]); // "foo->hello", "bar->world"
+  }
+            </code>
+          </pre> <div class="v-alert v-alert--outline info--text"><i aria-hidden="true" class="v-icon material-icons theme--light v-alert__icon">info</i><div>
+            D'autres opérations sont possibles sur les objets et les tableaux, voir Mozilla Developer Network - <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object">Object</a>, <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array">Array</a></div></div></div></div> <div class="v-card v-sheet theme--light"><div class="v-card__title title primary--text">Structures conditionnelles</div> <div class="v-card__text"><p>Comme beaucoup de langages inspirés du C, Javascript utilise le <a target="_blank" href="https://en.wikipedia.org/wiki/Short-circuit_evaluation">short-circuit evaluation</a> pour les conditions : </p> <p class="subheading primary--text">Le if / else</p> <pre>            <code class="javascript">
+  if(name === 'John') {
+    ...
+  } else if (name === 'Jane') {
+    ...
+  } else {
+    ...
+  }
+            </code>
+          </pre> <p class="subheading primary--text">Le switch case</p> <pre>            <code class="javascript">
+  switch (foo()) {
+    case 'orange':
+    case 'apple':
+      console.log('fruit');
+    break;
+    default:
+      console.log('unknown');
+  }
+            </code>
+          </pre> <p class="subheading primary--text">L'opérateur ternaire</p> <p>L'opérateur ternaire est utilisable dans une expression à la différence du <code>if else</code> qui est une instruction.</p> <pre>            <code class="javascript">
+  const passed = foo() ? ':+1:' : ':-1:';
+            </code>
+          </pre></div></div> <div class="v-card v-sheet theme--light"><div class="v-card__title title primary--text">Les classes</div> <div class="v-card__text"><p>
+            En JavaScript, les <b>classes</b> sont des fonctions spéciales. Il est possible de les déclarer de la même façon que les fonctions : par déclaration, ou par expression.<br>
+            Comme sur la plupart des langages, il est possible de définir un ou plusieurs <b>constructeurs</b>, méthodes de <b>prototype</b>, methodes <b>statiques</b> de classe.
+          </p> <pre>            <code class="javascript">
+  class Point {
+    // Constructeur de la classe
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+    }
+
+    // Méthode de prototype
+    getPosition() {
+      return `This is a point with x: ${this.x}, y: ${this.y}`;
+    }
+
+    // Il est également possible de lier une fonction à une propriété
+    get position() {
+      return `This is a point with x: ${this.x}, y: ${this.y}`;
+    }
+
+    // Méthode statique de classe
+    static distance(a, b) {
+      const dx = a.x - b.x;
+      const dy = a.y - b.y;
+      return Math.hypot(dx, dy);
+    }
+  }
+
+  const p1 = new Point(5, 5);
+  const p2 = new Point(10, 10);
+
+  console.log(p1.getPosition()); // "This is a point with x: 5, y: 5", getPosition() est une fonction
+  console.log(p1.position); // "This is a point with x: 5, y: 5", position est une propriété
+  console.log(Point.distance(p1, p2)); // 7.0710678118654755
+
+            </code>
+          </pre> <div class="v-alert v-alert--outline info--text"><i aria-hidden="true" class="v-icon material-icons theme--light v-alert__icon">info</i><div>
+            Il est également possible de définir des propriétés de classe et de déclarer des champs privés et publiques (fonctionalité expérimentale). Plus d'information sur <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes">Mozilla Developer Network - Classes</a></div></div> <p class="subheading primary--text">L'héritage de classe</p> <p>Le mot-clé <code>extends</code>, utilisé dans les déclarations ou les expressions de classes, permet de créer une classe qui hérite d'une autre classe (on parle aussi de "sous-classe" ou de "classe-fille").</p> <pre>            <code class="javascript">
+  class Animal {
+    constructor(name) {
+      this.name = name;
+    }
+
+    speak() {
+      console.log(this.name + ' speaks');
+    }
+  }
+
+  class Dog extends Animal {
+    constructor(name) {
+      super(name); // appelle le constructeur parent avec le paramètre
+    }
+    speak() {
+      console.log(this.name + ' barks.');
+    }
+  }
+            </code>
+          </pre></div></div> <div class="v-card v-sheet theme--light"><div class="v-card__title title primary--text">Astuce ES6</div> <div class="v-card__text"><p>la spécification ES6 (ou ES2015) a apporté de nombreuses fonctionalités au langage.</p> <p class="subheading primary--text">Littéraux de gabarits</p> <p>Les littéraux de gabarits <code>` `</code> sont des littéraux de chaînes de caractères permettant d'intégrer des expressions. Avec eux, on peut utiliser des chaînes de caractères multi-lignes et des fonctionnalités d'interpolation.</p> <pre>            <code class="javascript">
+  const a = 5;
+  const b = 10;
+  console.log(`${a} + ${b} equals
+  ${a+b}.`);
+  // "5 + 10 equals
+  // 15."
+            </code>
+          </pre> <div class="v-alert v-alert--outline info--text"><i aria-hidden="true" class="v-icon material-icons theme--light v-alert__icon">info</i><div>
+            Il est également possible d'imbriquer des gabarits pour obtenir des chaînes de caractères configurables. Plus d'information sur <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Litt%C3%A9raux_gabarits">Mozilla Developer Network - Littéraux de gabarits</a></div></div> <br> <p class="subheading primary--text">Syntaxe de décomposition</p> <p>La <b>syntaxe de décomposition</b> <code>...</code> (<i>spread operator</i> en anglais) permet d'étendre un itérable (par exemple une expression de tableau ou une chaîne de caractères) en lieu et place de plusieurs arguments (pour les appels de fonctions) ou de plusieurs éléments (pour les littéraux de tableaux) ou de paires clés-valeurs (pour les littéraux d'objets).</p> <pre>            <code class="javascript">
+  // Améliorer les littéraux de tableau
+  const articulations = ['épaules', 'genoux'];
+  const corps = ['têtes', ...articulations, 'bras', 'pieds'];
+  // ["têtes", "épaules", "genoux", "bras", "pieds"]
+
+  // Copier un tableau
+  const arr = [1, 2, 3];
+  const arr2 = [...arr];
+
+  // Concaténer deux tableaux
+  arr = [...arr, ...arr2];
+            </code>
+          </pre> <div class="v-alert v-alert--outline info--text"><i aria-hidden="true" class="v-icon material-icons theme--light v-alert__icon">info</i><div>
+            La proposition relative à la décomposition des propriétés (actuellement au stade de <a href="https://github.com/tc39/proposal-object-rest-spread">proposition de niveau 4</a>) vise à ajouter la décomposition des propriétés pour les littéraux objets. Plus d'information sur <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Syntaxe_d%C3%A9composition">Mozilla Developer Network - Syntaxe de décomposition</a></div></div> <br> <p class="subheading primary--text">Affectation par décomposition</p> <p>L'<b>affectation par décomposition</b> (<i>destructuring</i> en anglais) est une expression JavaScript qui permet d'extraire (<i>unpack</i> en anglais) des données d'un tableau ou d'un objet grâce à une syntaxe dont la forme ressemble à la structure du tableau ou de l'objet.</p> <pre>            <code class="javascript">
+// Destructuring d'un tableau avec des valeurs par défaut
+var [a = 5, b = 7] = [1];
+console.log(a); // 1
+console.log(b); // 7
+
+// Destructuring d'un objet avec des valeurs par défaut
+var {a, b = 21} = {a:45};
+console.log(a); // 41
+console.log(b); // 21
+
+var {a, b} = null;
+console.log(a); // "TypeError: Cannot destructure property `a` of 'undefined' or 'null'.
+            </code>
+          </pre> <div class="v-alert v-alert--outline info--text"><i aria-hidden="true" class="v-icon material-icons theme--light v-alert__icon">info</i><div>
+            Plus d'information et d'exemples sont disponibles sur <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition">Mozilla Developer Network - Affecter par décomposition</a></div></div></div></div> <div class="v-card v-sheet theme--light"><div class="v-card__title title primary--text">Hands on!</div> <div class="v-card__text"><ol><li>Créez un taleau <code>days</code> contenant les jours de la semaine, et faites un extrait des jours ouvrés dans une variable <code>workingDays</code></li> <li>Affichez <code>days</code> <code>workingDays</code> et le troisième jour ouvré dans la console</li> <li>Créez une bière avec comme nom <b>Brewdog Punk Ipa</b> et 10 unités</li> <li>Créez une function <code>drink</code> qui accepte une bière et un nombre en paramètres. Elle décrémente le nombre d'unité de bière et renvoie une chaine avec le nom et le nombre de bières bues</li> <li>Créez une function <code>doMove</code> qui accepte une function, une bière et un nombre en paramètres. Elle renvoie une chaine avec la date courante et le résultat de la fonction sur les paramètres restants. Affichez le résultat de l'action de boire 2 bières</li></ol></div></div></div></div></div></div></main></div></div></div></div><script>window.__NUXT__={layout:"default",data:[{}],error:null,state:{sidebar:!1},serverRendered:!0}</script><script src="/nodejs-training/_nuxt/b03d9ead0658fb8c5971.js" defer></script><script src="/nodejs-training/_nuxt/bc8ce08faa1c02c436c1.js" defer></script><script src="/nodejs-training/_nuxt/98f90f04c315895c381e.js" defer></script><script src="/nodejs-training/_nuxt/d34fb72ee6f11ab1ca77.js" defer></script><script src="/nodejs-training/_nuxt/ff9cee4eff930804f07c.js" defer></script>
+  </body>
+</html>
